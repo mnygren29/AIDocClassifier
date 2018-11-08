@@ -1,0 +1,1 @@
+Using Xamarin Cross Platform Forms and Prism MVVM, this app allows users to upload mortgage document images via their mobile device camera to Microsofts Custom Vision api to train AI to classify document images. The user can also add tags and run the training all via api calls.
