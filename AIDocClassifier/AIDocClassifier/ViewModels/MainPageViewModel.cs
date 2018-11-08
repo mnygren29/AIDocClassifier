@@ -18,7 +18,7 @@ namespace AIDocClassifier.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
-        string trainingKey = "ce7735d70f964c31b1887558845fe35d";
+        string trainingKey = "2342342234234234";
 
         // public ImageSource Image { get; private set; }
         public string Tag { get; private set; }
