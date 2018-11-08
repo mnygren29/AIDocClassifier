@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AIDocClassifier.Views.MainPage"
+             Title="{Binding Title}">
+
+    <StackLayout Margin="0,20,0,0">
+        <Frame BackgroundColor="WhiteSmoke"  HasShadow="False" Margin="25,10,25,10">
+            <StackLayout>
+                <Label HorizontalOptions="Center" FontSize="Large" Text="LoanDoc Classifier AI " TextColor="Black" />
+                <BoxView HeightRequest="3" WidthRequest="1" BackgroundColor="Black" Margin="0,2,0,4"/>
+                <Label HorizontalOptions="Center" FontSize="Large" Text="Create A Tag" TextColor="Black" />
+                <Picker Title="Select A Project" TextColor="Black"
+                                    ItemsSource="{Binding ProjectList}" 
+                                    SelectedItem="{Binding ProjectSelectedFromlist}"/>
+                <Entry Text="{Binding TagNameEntry}" Placeholder="Tag Name" TextColor="Gray"/>
+                <Button Text="Create a Tag" TextColor="White" BackgroundColor="Orange" Command="{Binding CreateTagCommand}" IsVisible="{Binding IsTagButtonVisible}"></Button>
+                <BoxView HeightRequest="5" WidthRequest="1" BackgroundColor="Black" Margin="0,2,0,4"/>
+                <Label HorizontalOptions="Center" FontSize="Large" Text="Associate Image Tag" TextColor="Black" />
+                <Picker Title="Select A Project" TextColor="Black"
+                                    ItemsSource="{Binding ProjectList}" 
+                                    SelectedItem="{Binding ProjectSelectedFromlist}"/>
+                <Picker Title="Select A Tag" TextColor="Black"
+                                    ItemsSource="{Binding TagIndexer}" ItemDisplayBinding="{Binding TagName}"
+                                    SelectedItem="{Binding ItemSelectedFromList}" IsVisible="{Binding IsTagPickerVisible}"/>
+                <Button Text="Upload Photo to Classify" TextColor="White" BackgroundColor="Orange" Command="{Binding TakePhotoCommand}" IsVisible="{Binding IsPhotoButtonVisible}" ></Button>
+                <BoxView HeightRequest="3" WidthRequest="1" BackgroundColor="Black" Margin="0,2,0,4"/>
+                <Button Text="Train" TextColor="White" BackgroundColor="Orange" Command="{Binding TrainCustomVisionCommand}"></Button>
+
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>
